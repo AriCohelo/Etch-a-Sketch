@@ -1,0 +1,23 @@
+body{
+    background-color: green;
+}
+#container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 400px;
+    /* border: solid 1px red; */
+}
+
+.rowDiv {
+    display: flex;
+    /* border: solid 1px red; */
+    box-sizing: border-box;
+    margin: 5px;
+
+}
+
+.columnDiv {
+
+    box-sizing: border-box;
+    border: solid 1px black;
+}
