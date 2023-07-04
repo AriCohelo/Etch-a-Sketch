@@ -1,61 +1,67 @@
 
 const container = document.querySelector('#container')
 function gridCreator(num) {
-    const squareSize = 400 / num;
-    for (let i = 0; i < num; i++) {
-        let rowDiv = document.createElement('div');
-        rowDiv.classList.add('rowDiv');
-        container.appendChild(rowDiv);
-        
-        for (let j = 0; j < num; j++) {
-            let columnDiv = document.createElement('div');
-            columnDiv.classList.add('columnDiv');
-            columnDiv.style.width = `${squareSize}px`;
-            columnDiv.style.height = `${squareSize}px`;
-            rowDiv.appendChild(columnDiv);
-        }
-            }
+
+  const squareSize = 80 / num;
+  for (let i = 0; i < num; i++) {
+    let rowDiv = document.createElement('div');
+    rowDiv.classList.add('rowDiv');
+    container.appendChild(rowDiv);
+
+    for (let j = 0; j < num; j++) {
+      let columnDiv = document.createElement('div');
+      columnDiv.classList.add('columnDiv');
+      columnDiv.style.width = `${squareSize}vh`;
+      columnDiv.style.height = `${squareSize}vh`;
+      rowDiv.appendChild(columnDiv);
+    }
+  }
+  let squares = document.querySelectorAll('.columnDiv');
+  squares.forEach((square) => {
+    square.addEventListener('mousedown', handleMouseDown);
+    square.addEventListener('mousemove', changeColor);
+    square.addEventListener('mouseup', handleMouseUp);
+  });
 }
-gridCreator(8)
 
-let prueba = document.createElement('div');
-prueba.style.width = ('100px')
-prueba.style.height = ('100px')
-prueba.style.border = ('3px solid black')
-container.appendChild(prueba)
-let hijaPrueba = document.createElement('div');
-hijaPrueba.style.width = ('50px')
-hijaPrueba.style.height = ('50px')
-hijaPrueba.style.border = ('3px solid black')
+gridCreator(32);
 
-prueba.appendChild(hijaPrueba)
-
-
-  
-
-
-
+let isMouseDown = false;
+function handleMouseDown() {
+  isMouseDown = true;
+}
+function handleMouseUp() {
+  isMouseDown = false;
+}
+function changeColor(e) {
+  if (isMouseDown) {
+    if (e.target.classList.contains('columnDiv')) {
+      e.target.style.backgroundColor = 'red';
+    }
+  }
+}
 
 
+// let gridButton = document.querySelector('.gridSquares')
+// gridButton.addEventListener('click', function () {
+//   let value = prompt('how many squares');
+//   let squares = document.querySelectorAll('.columnDiv');
+//   squares.forEach(square => square.remove())
+//   gridCreator(value);
+
+// })
+
+let slider = document.querySelector('.slider');
+slider.addEventListener('input', function () {
+  // let value = 'input'
+  let squares = document.querySelectorAll('.columnDiv');
+  squares.forEach(square => square.remove())
+  gridCreator(this.value);
+})
 
 
 
 
-// function createGrid(num) {
-//         const container = document.getElementById("container");
-//         const squareSize = 400 / num;
-//         for (let i = 0; i < num; i++) {
-//             const row = document.createElement("div");
-//             row.classList.add("grid-row");
-//             for (let j = 0; j < num; j++) {
-//                 const cell = document.createElement("div");
-//                 cell.classList.add("grid-item");
-//                 cell.style.width = `${squareSize}px`;
-//                 cell.style.height = `${squareSize}px`;
-//                 row.appendChild(cell);
-//             }
-//             container.appendChild(row);
-//         }
-//     }
-    
-//     createGrid(8);
+
+
+
