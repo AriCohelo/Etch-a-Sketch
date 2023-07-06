@@ -1,30 +1,122 @@
-body{
-    background-image: linear-gradient(45deg, rgb(20, 222, 124) 0%, rgb(20, 222, 124) 21%,rgb(25, 190, 119) 21%, rgb(25, 190, 119) 37%,rgb(30, 158, 113) 37%, rgb(30, 158, 113) 46%,rgb(35, 126, 108) 46%, rgb(35, 126, 108) 53%,rgb(39, 94, 103) 53%, rgb(39, 94, 103) 59%,rgb(44, 62, 97) 59%, rgb(44, 62, 97) 77%,rgb(49, 30, 92) 77%, rgb(49, 30, 92) 100%);
-height: 100vh;
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
+body {
+    background-image: radial-gradient(circle at center center, rgba(33, 33, 33, 0), rgb(33, 33, 33)), repeating-linear-gradient(135deg, rgb(33, 33, 33) 0px, rgb(33, 33, 33) 1px, transparent 1px, transparent 4px), repeating-linear-gradient(45deg, rgb(56, 56, 56) 0px, rgb(56, 56, 56) 5px, transparent 5px, transparent 6px), linear-gradient(90deg, rgb(33, 33, 33), rgb(33, 33, 33));
+    /* background-image: url(525108.jpeg); */
+    height: 100vh;
+
+
 }
-#container {
+
+@font-face {
+    font-family: tittleFont;
+    src: url(/Etch-a-Sketch/youmurdererbb_reg.ttf);
+}
+
+.tittle {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    color: #8bb0c7;
+    font-family: tittleFont;
+    font-size: 100px;
+    margin-bottom: 30px;
+}
+
+.prueba {
+    margin-top: 20px;
+}
+
+
+#gridContainer {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    width: 80vh;
-   border: 1px solid black;
+    width: 70vh;
+    height: 70vh;
+    border: 1px solid black;
+    background-color: #a8aaa9;
+    flex-shrink: 0;
+
+}
+
+#container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    height: 80%;
+
+}
+
+
+
+.sliderContainer {
+    margin-top: 270px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.buttonContainer {
+    margin: 225px 50px 50px 180px;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.buttons {
+    margin: 30px 40px;
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    background-color: #af5147;
+    border: 5px solid #f0b14f;
 }
 
 .rowDiv {
     /* display: flex; */
     box-sizing: border-box;
-   
-
 }
 
 .columnDiv {
-
     box-sizing: border-box;
     border: solid 1px rgba(0, 0, 0, 0.141);
 }
 
+.board {
+    width: 75vh;
+    height: 75vh;
+    margin-top: 10vhvh;
+    background-color: #3e3946;
+    position: absolute;
+    z-index: -1;
+}
+
+.slider {
+    /* -webkit-appearance: none; */
+    appearance: none;
+    transform: rotate(270deg);
+    background: transparent;
+    cursor: pointer;
+    width: 100%;
+    margin: 30px 30px 12px 30px;
+}
+
+.slider::-webkit-slider-runnable-track {
+    background: #3e3946;
+    height: 15px;
+    border-radius: 15px;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    margin-top: -5px;
+    background-color: #AF5147;
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    border: 2px solid #f0b14f;
+}
