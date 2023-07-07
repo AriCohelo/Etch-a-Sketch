@@ -1,7 +1,5 @@
-
 const gridContainer = document.querySelector('#gridContainer')
 function gridCreator(num) {
-
   const squareSize = 70 / num;
   for (let i = 0; i < num; i++) {
     const rowDiv = document.createElement('div');
@@ -16,41 +14,8 @@ function gridCreator(num) {
       rowDiv.appendChild(columnDiv);
     }
   }
-  hoverBlack()
+  hover('black')
 }
-
-
-function hoverBlack() {
-
-  let squares = document.querySelectorAll('.columnDiv');
-  squares.forEach((square) => {
-    square.addEventListener('mousedown', handleMouseDown);
-    square.addEventListener('mousemove', colorBlack);
-    square.addEventListener('mouseup', handleMouseUp);
-  });
-}
-
-// function hoverWhite() {
-
-//   let squares = document.querySelectorAll('.columnDiv');
-//   squares.forEach((square) => {
-//     square.addEventListener('mousedown', handleMouseDown);
-//     square.addEventListener('mousemove', colorWhite);
-//     square.addEventListener('mouseup', handleMouseUp);
-//   });
-//   console.log('OK')
-// }
-
-// function hoverRed() {
-
-//   let squares = document.querySelectorAll('.columnDiv');
-//   squares.forEach((square) => {
-//     square.addEventListener('mousedown', handleMouseDown);
-//     square.addEventListener('mousemove', colorRed);
-//     square.addEventListener('mouseup', handleMouseUp);
-//   });
-//   console.log('OK')
-// }
 
 gridCreator(32);
 
@@ -66,17 +31,6 @@ function colorBlack(e) {
     e.target.style.backgroundColor = 'black';
   }
 }
-// function colorWhite(e) {
-//   if (isMouseDown) {
-//     e.target.style.backgroundColor = '#a8aaa9';
-//   }
-// }
-
-// function colorRed(e) {
-//   if (isMouseDown) {
-//     e.target.style.backgroundColor = 'red';
-//   }
-// }
 
 let slider = document.querySelector('.slider');
 function sliderStyle() {
@@ -98,17 +52,6 @@ slider.addEventListener('input', function () {
   gridCreator(this.value);
 })
 
-// let button1 = document.getElementById('button1');
-// button1.addEventListener('click', hoverBlack);
-
-// let button2 = document.getElementById('button2');
-// button2.addEventListener('click', hoverWhite);
-
-// let button3 = document.getElementById('button3');
-// button3.addEventListener('click', hoverRed);
-
-
-
 function hover(color) {
 
   let squares = document.querySelectorAll('.columnDiv');
@@ -117,15 +60,12 @@ function hover(color) {
     square.addEventListener('mousemove', (e) => { colorPick(e, color) });
     square.addEventListener('mouseup', handleMouseUp);
   });
-  console.log('hover ok')
 }
-
 
 function colorPick(e, color) {
   if (isMouseDown) {
     e.target.style.backgroundColor = color;
   }
-  console.log('colorPickOK')
 }
 
 let button1 = document.getElementById('button1');
@@ -133,3 +73,16 @@ button1.addEventListener('click', () => { hover('black') });
 
 let button2 = document.getElementById('button2');
 button2.addEventListener('click', () => { hover('white') });
+
+let button3 = document.getElementById('button3');
+button3.addEventListener('click ', () => { hover(gayRandomColor()) });
+
+
+
+
+const gayColors = ['228, 3, 3', '255, 140, 0', '	255, 237, 0', '0, 128, 38', '36, 64, 142', '115, 41, 130']
+function gayRandomColor() {
+  const random = Math.floor(Math.random() * gayColors.length);
+  const gayColor = `rgb(${gayColors[random]})`;
+  return gayColor
+}

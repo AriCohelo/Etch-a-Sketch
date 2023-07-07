@@ -16,7 +16,8 @@ body {
 
 @font-face {
     font-family: tittleFont;
-    src: url(/Etch-a-Sketch/youmurdererbb_reg.ttf);
+    src: url(youmurdererbb.ttf);
+
 }
 
 @font-face {
