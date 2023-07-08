@@ -26,33 +26,46 @@ function handleMouseDown() {
 function handleMouseUp() {
   isMouseDown = false;
 }
+let gayButton = document.getElementById('button3')
+gayButton.addEventListener('click', handleGayBtnTrue)
+let buttonGayActive = false;
+function handleGayBtnTrue() {
+  buttonGayActive = true;
+  gayButton.style.border = '7px solid #eb9e22';
+  gayButton.style.boxShadow = '0px 0px 15px white';
+  gayButton.style.fontSize = '26px'
+  gayColors()
+}
+function handleGayBtnfalse() {
+  buttonGayActive = false;
+}
+
+function gayColors() {
+  if (buttonGayActive) {
+
+    let cell = document.querySelectorAll('.cell');
+    cell.forEach((square) => {
+      square.addEventListener('mousedown', handleMouseDown);
+      square.addEventListener('mousemove', (e) => { gayColor(e) });
+      square.addEventListener('mouseup', handleMouseUp);
+    });
+  }
+
+}
 
 
-// let cells = document.querySelectorAll('.cell')
-// cells.forEach(elm => {
-//   elm.addEventListener('mouseover', gayColor);
-// });
-
-
-function hover(e) {
-
-  let squares = document.querySelectorAll('.cell');
-  squares.forEach((square) => {
-    square.addEventListener('mousedown', handleMouseDown);
-    square.addEventListener('mousemove', () => { gayColor(e) });
-    square.addEventListener('mouseup', handleMouseUp);
-  });
-  console.log('click hover')
+function colorBlack(e) {
+  e.target.style.backgroundColor = 'black'
 }
 
 function gayColor(e) {
-  const gayColors = ['228, 3, 3', '255, 140, 0', '	255, 237, 0', '0, 128, 38', '36, 64, 142', '115, 41, 130']
-  const random = Math.floor(Math.random() * gayColors.length);
-  const gayColor = `rgb(${gayColors[random]})`;
-  e.target.style.backgroundColor = gayColor
+  if (isMouseDown) {
+    const gayColors = ['228, 3, 3', '255, 140, 0', '	255, 237, 0', '0, 128, 38', '36, 64, 142', '115, 41, 130']
+    const random = Math.floor(Math.random() * gayColors.length);
+    const gayColor = `rgb(${gayColors[random]})`;
+    e.target.style.backgroundColor = gayColor
+
+  }
 }
 
-let clickCells = document.querySelectorAll('.cell');
-clickCells.forEach((square) => {
-  square.addEventListener('mousedown', hover)
-});
+
