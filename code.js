@@ -112,7 +112,6 @@ function colorpickPaint() {
 
 // let shading = document.getElementById('buttonShading');
 // shading.addEventListener('click', handleShadingBtnTrue)
-
 // let buttonShadingActive = false;
 
 // function handleShadingBtnTrue() {
@@ -129,7 +128,6 @@ function colorpickPaint() {
 //   shading.style.border = '5px solid #eb9e22';
 //   shading.style.boxShadow = '0px 0px 4px white';
 //   shading.style.fontSize = '25px';
-
 // }
 
 // function shadingPaint() {
@@ -147,11 +145,7 @@ function colorpickPaint() {
 //   if (isMouseDown) {
 //     //Incompleto 
 //   }
-
-
 // }
-
-
 
 //Slider Config
 
@@ -183,4 +177,3 @@ clearButton.addEventListener('click', function () {
 })
 
 
-// solucionar los prblemas que tiene el boton shading que no desactiva la funcion paint de los otros colores cuando es activado
