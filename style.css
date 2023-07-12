@@ -20,18 +20,18 @@ html {
     src: url(GOODDP__.TTF);
 }
 
+
 .titleContainer {
     display: flex;
     justify-content: center;
 }
 
 .tittle {
-    margin: 20px 20px 20px 20px;
+    margin: 20px 20px 40px 20px;
     color: #8bb0c7;
     font-family: tittleFont;
     font-size: 100px;
-
-
+    text-shadow: -3px 10px 5px #111111;
 }
 
 .column {
@@ -48,6 +48,7 @@ html {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-wrap: wrap;
 
 }
 
@@ -62,6 +63,7 @@ html {
     background-color: #a8aaa9;
     flex-shrink: 0;
 
+
 }
 
 
@@ -70,7 +72,8 @@ html {
 
     display: flex;
     flex-direction: column;
-
+    align-items: center;
+    margin-top: 40px;
 }
 
 .buttons {
@@ -87,7 +90,7 @@ html {
     text-shadow: 0px 0px 5px#111111;
     background-color: #af5147;
     border: 5px solid #eb9e22;
-    box-shadow: 0px 0px 4px white;
+    box-shadow: 0px 0px 10px black;
     text-transform: uppercase;
     box-sizing: border-box;
     transition-duration: 100ms;
@@ -97,10 +100,75 @@ html {
 
 .buttons:hover {
     border: 7px solid #eb9e22;
-    box-shadow: 0px 0px 15px white;
+    box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.5);
     font-size: 26px;
 
+
 }
+
+#buttonClear {
+    width: 70px;
+    height: 70px;
+    font-size: 20px;
+    background-color: #3e3946;
+    border: 4px solid #af5147;
+}
+
+#buttonClear:hover {
+    border: 5px solid #af5147;
+    box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.5);
+    font-size: 21px;
+}
+
+.color {
+    display: flex;
+    align-items: center;
+    position: relative;
+
+
+}
+
+.colorPick {
+    width: 100px;
+    position: absolute;
+    top: -19%;
+    left: 22%;
+}
+
+.colorPickContainer {
+
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0px 0px 10px black;
+    margin: 10px 40px 20px 40px;
+    transition-duration: 100ms;
+}
+
+.colorPickContainer:hover {
+    box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.5);
+}
+
+#colorPick {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 100px;
+    height: 100px;
+    background-color: #eb9e22;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+
+
+}
+
+#colorPick::-webkit-color-swatch {
+    border-radius: 50%;
+    border: none;
+
+
+}
+
 
 
 .board {
@@ -118,6 +186,7 @@ html {
 
     align-items: center;
     flex-shrink: 0;
+    margin-top: 130px;
 }
 
 .slider {
@@ -151,6 +220,5 @@ html {
 .slider::-webkit-slider-thumb:hover {
     border: 4px solid #eb9e22;
     box-shadow: 0px 0px 3px white;
-
 
 }
