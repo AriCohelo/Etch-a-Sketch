@@ -9,26 +9,28 @@
 </head>
 
 <body>
+    <div class="titleContainer">
+        <h1 class="tittle">Etch-a-Sketch</h1>
+    </div>
     <div id="container">
         <div class="buttonContainer">
-            <div class="buttons" id="button1">Black</div>
-            <div class="buttons" id="button2">white</div>
+            <div class="color">
+                <img src="colorpick.png" alt="colorPick" class="colorPick">
+                <div class="colorPickContainer" id="colorPickContainer">
+                    <input type="color" id="colorPick" value="#3e3946">
+                </div>
+            </div>
             <div class="buttons" id="button3">gay</div>
-            <div class="buttons" id="button4">random</div>
-
+            <!-- <div class="buttons" id="buttonShading">shading</div> -->
         </div>
-        <div class="" id="prueba">
-            <div>
-                <h1 class="tittle">Etch-a-Sketch</h1>
-            </div>
-            <div id="gridContainer">
-                <div class="board"></div>   
-            </div>
+        <div id="gridContainer">
+            <div class="board"></div>
         </div>
-
         <div class="sliderContainer">
             <input type="range" min="2" max="64" value="32" class="slider">
             <div class="sliderText"></div>
+            <div class="buttons" id="buttonClear">clear</div>
+
         </div>
     </div>
     <script src="code.js"></script>
